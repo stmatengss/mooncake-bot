@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: mooncake-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: APP_ID
+        sync: false
+      - key: PRIVATE_KEY
+        sync: false
+      - key: WEBHOOK_SECRET
+        sync: false
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
